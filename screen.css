@@ -16,13 +16,13 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
 */
 
 html {
-  font-size: 18px;
-  line-height: 22px; /* ~120% */
-  padding: 22px;
+  font-size: 1.125em; /* 18 / 16 = 1.125 */
+  line-height: 1.2222222222em; /* 22 / 18 = 1.2222222222 */
+  padding: 1.2222222222em; /* 22 / 18 = 1.2222222222 */
 }
 h1 {
-  font-size: 29.124px;
-  line-height: 44px;
+  font-size: 1.618em; /* 29.124 / 18 = 1.618 */
+  line-height: 1.5107814861em; /* 44 / 29.124 = 1.5107814861 */
 }
 
 
