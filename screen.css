@@ -8,3 +8,8 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
 
 /* Begin site styles below */
 
+html {
+  font-size: 18px;
+  line-height: 22px; /* ~120% */
+}
+
