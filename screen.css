@@ -25,8 +25,17 @@ h1 {
   line-height: 1.5107814861em; /* 44 / 29.124 = 1.5107814861 */
 }
 
-
-
+/* Forms */
+input,
+label {
+  display: block;
+}
+/*
+If you want colons:
+label::after {
+  content: ":";
+}
+*/
 
 /* Diagnostic CSS */
 /**
