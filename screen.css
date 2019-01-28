@@ -36,6 +36,17 @@ label::after {
   content: ":";
 }
 */
+form li {
+  display: flex;
+  flex-flow row wrap;
+}
+input {
+  flex: 3 0 auto;
+}
+label {
+  flex: 1 0 auto;
+  width: 33.333333333%
+}
 
 /* Diagnostic CSS */
 /**
