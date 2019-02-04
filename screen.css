@@ -38,7 +38,7 @@ label::after {
 */
 form li {
   display: flex;
-  flex-flow row wrap;
+  flex-flow: row wrap;
 }
 input {
   flex: 3 0 auto;
