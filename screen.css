@@ -53,6 +53,9 @@ input[type="tel"] {
   margin-bottom: 11px;
   background-color: rgba(67,176,183,1.0);
 }
+input[type="tel"]:focus {
+  background-color: #EEE;
+}
 input[type="submit"] {
   background-color: rgba(67,176,183,0.3);
 }
