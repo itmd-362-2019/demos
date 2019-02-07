@@ -57,9 +57,11 @@ input[type="tel"]:focus {
   background-color: #EEE;
 }
 input[type="submit"] {
-  background-color: rgba(67,176,183,0.3);
+  background-color: rgba(67,176,183,8.0);
 }
-
+input[type="submit"]:disabled {
+  background-color: rgba(67,176,183,0.2);
+}
 /* Diagnostic CSS */
 /**
 * A quick baseline grid overlay using css+svg.
