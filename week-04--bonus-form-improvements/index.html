@@ -8,14 +8,25 @@
 </head>
 <body>
   <main id="content">
-    <h1>Sign Up for Text Alerts</h1>
+    <h1>Sign Up for Emergency Alerts</h1>
     <p>
-      Enter your phone number below to receive information about some big crisis, should it happen.
+      Enter your phone number and email address below to receive information about some big crisis,
+      should it happen.
     </p>
-    <form id="phonelist" action="#null" method="get">
-      <label for="telephone">Phone Number</label>
-      <input type="tel" name="telephone" id="telephone" />
-      <input type="submit" name="signup" id="signup" value="Sign Up" />
+    <form id="emergencyalerts" action="#null" method="get">
+      <ol>
+        <li>
+          <label for="telephone">Phone Number</label>
+          <input type="tel" name="telephone" id="telephone" />
+        </li>
+        <li>
+          <label for="email">Email Address</label>
+          <input type="email" name="email" id="email" />
+        </li>
+        <li>
+          <input type="submit" name="signup" id="signup" value="Sign Up" />
+        </li>
+      </ol>
     </form>
   </main>
 <script src="site.js"></script>
