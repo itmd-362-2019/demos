@@ -91,6 +91,9 @@
       if (validate_us_phone(tel_input.value) && validate_email(email_input.value)) {
         // If both are valid, remove the disabled attribute on the submit button
         signup_submit.removeAttribute('disabled');
+      } else {
+        // This will re-disable the submit button if the input changes to an invalid state
+        signup_submit.setAttribute('disabled','disabled');
       }
     });
 
