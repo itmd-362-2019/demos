@@ -77,14 +77,16 @@
 
   document.addEventListener('DOMContentLoaded',function(){
     // Select the necessary elements from the DOM
+    var signup_form = document.querySelector('#emergencyalerts')
     var signup_submit = document.querySelector('#signup');
     var tel_input = document.querySelector('#telephone');
     // Disable the submit button until we are reasonable sure
     // that we have a ten-digit phone number
     signup_submit.setAttribute('disabled','disabled');
 
-    tel_input.addEventListener('keyup',function(){
-      if (validate_us_phone(this.value)) {
+    // Listen for keyup event ANYWHERE in the form
+    signup_form.addEventListener('keyup',function(){
+      if (validate_us_phone(tel_input.value)) {
         // If so, allow the form to be submitted
         signup_submit.removeAttribute('disabled');
       }
