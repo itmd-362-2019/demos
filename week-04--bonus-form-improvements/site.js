@@ -74,38 +74,24 @@
     return validate(email,/^[^@\s]+@[^@\s]+$/g);
   }
 
-  // Declare variables for access in remaining DOM script
-  var phone_submit, tel_input;
 
   document.addEventListener('DOMContentLoaded',function(){
     // Select the necessary elements from the DOM
-    phone_submit = document.querySelector('#signup');
-    tel_input = document.querySelector('#telephone');
+    var signup_submit = document.querySelector('#signup');
+    var tel_input = document.querySelector('#telephone');
     // Disable the submit button until we are reasonable sure
     // that we have a ten-digit phone number
-    phone_submit.setAttribute('disabled','disabled');
+    signup_submit.setAttribute('disabled','disabled');
+
+    tel_input.addEventListener('keyup',function(){
+      if (validate_us_phone(this.value)) {
+        // If so, allow the form to be submitted
+        signup_submit.removeAttribute('disabled');
+      }
+    });
+
+  // End of DOMContentLoaded
   });
 
-  tel_input.addEventListener('focus', function(){
-    console.log('OMG somebody focused on the telephone input');
-  });
-  tel_input.addEventListener('blur', function(){
-    console.log('OMG somebody navigated away from the telephone input');
-  });
-
-  tel_input.addEventListener('keyup',function(){
-    // Remove all non-digit characters from the telephone input's value
-    var clean_number = this.value.replace(/\D/g,'');
-    // Remove any 1 apppearing at the start of the number
-    var sanitized_number = clean_number.replace(/^1/,'');
-    // Finally, check to see if the number is 10 digits long
-    if (sanitized_number.length === 10) {
-      console.log('That number looks great!');
-      // If so, allow the form to be submitted
-      phone_submit.removeAttribute('disabled');
-    }
-
-  });
-
-
+// End of IIFE
 }());
