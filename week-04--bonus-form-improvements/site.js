@@ -79,6 +79,7 @@
     // Select the necessary elements from the DOM
     var signup_form = document.querySelector('#emergencyalerts')
     var signup_submit = document.querySelector('#signup');
+    var email_input = document.querySelector('#email');
     var tel_input = document.querySelector('#telephone');
     // Disable the submit button until we are reasonable sure
     // that we have a ten-digit phone number
@@ -86,8 +87,9 @@
 
     // Listen for keyup event ANYWHERE in the form
     signup_form.addEventListener('keyup',function(){
-      if (validate_us_phone(tel_input.value)) {
-        // If so, allow the form to be submitted
+      // Check the likely validity of phone AND email
+      if (validate_us_phone(tel_input.value) && validate_email(email_input.value)) {
+        // If both are valid, remove the disabled attribute on the submit button
         signup_submit.removeAttribute('disabled');
       }
     });
