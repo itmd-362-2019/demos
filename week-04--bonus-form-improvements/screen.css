@@ -49,11 +49,13 @@ input {
   outline: 0;
   width: 100%;
 }
-input[type="tel"] {
+input[type="tel"],
+input[type="email"] {
   margin-bottom: 11px;
   background-color: rgba(67,176,183,1.0);
 }
-input[type="tel"]:focus {
+input[type="tel"]:focus,
+input[type="email"]:focus {
   background-color: #EEE;
 }
 input[type="submit"] {
