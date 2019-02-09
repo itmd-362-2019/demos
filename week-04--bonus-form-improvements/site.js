@@ -74,18 +74,18 @@
     return validate(email,/^[^@\s]+@[^@\s]+$/g);
   }
 
-  var phone_submit = document.querySelector('#signup');
+  // Declare variables for access in remaining DOM script
+  var phone_submit, tel_input;
 
   document.addEventListener('DOMContentLoaded',function(){
-    // console.log('OMG the DOM is loaded!!!1!');
-    // var heading_text = document.querySelector('#content h1').innerText;
-    // console.log('The heading text is:', heading_text);
+    // Select the necessary elements from the DOM
+    phone_submit = document.querySelector('#signup');
+    tel_input = document.querySelector('#telephone');
     // Disable the submit button until we are reasonable sure
     // that we have a ten-digit phone number
     phone_submit.setAttribute('disabled','disabled');
   });
 
-  var tel_input = document.querySelector('#telephone');
   tel_input.addEventListener('focus', function(){
     console.log('OMG somebody focused on the telephone input');
   });
