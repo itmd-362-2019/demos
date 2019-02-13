@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Merriweather:400,400i,700&subset=latin-ext');
+
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
@@ -18,7 +20,7 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
 html {
   background: #222;
   color: #EEE;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: 'Merriweather', sans-serif;
   font-size: 1.125em; /* 18 / 16 = 1.125 */
   line-height: 1.2222222222em; /* 22 / 18 = 1.2222222222 */
   padding: 1.2222222222em; /* 22 / 18 = 1.2222222222 */
@@ -28,9 +30,6 @@ h1 {
   line-height: 1.5107814861em; /* 44 / 29.124 = 1.5107814861 */
 }
 p {
-  display: none;
-  font-size: 11.125px;
-  line-height: 16.5px;
   padding-bottom: 22px;
 }
 
