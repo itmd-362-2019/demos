@@ -14,9 +14,16 @@
       crisis, should it happen. Your subscription will be active through the end of 2020.
     </p>
     <form id="signup-form" action="#null" method="get">
-      <label for="contact">Email Address or Mobile Phone Number</label>
-      <input type="text" name="contact" id="contact" />
-      <input type="submit" name="signup" id="signup" value="Sign Up" />
+      <ol>
+        <li id="contact-input">
+          <label for="contact">Email Address or Mobile Phone Number</label>
+          <p class="hint">Enter your email or phone, depending on how you wish to receive alerts.</p>
+          <input type="text" name="contact" id="contact" />
+        </li>
+        <li>
+          <input type="submit" name="signup" id="signup" value="Sign Up" />
+        </li>
+      </ol>
     </form>
   </main>
 <script src="site.js"></script>
