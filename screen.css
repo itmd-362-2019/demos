@@ -64,6 +64,9 @@ input[type="submit"]:disabled {
 .hint {
   font-style: italic;
 }
+.hint b {
+  color: red;
+}
 /* Diagnostic CSS */
 /**
 * A quick baseline grid overlay using css+svg.
