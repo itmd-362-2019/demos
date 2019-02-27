@@ -28,9 +28,13 @@ html {
 h1 {
   font-size: 1.618em; /* 29.124 / 18 = 1.618 */
   line-height: 1.5107814861em; /* 44 / 29.124 = 1.5107814861 */
+  color: #43b0b7;
 }
 p {
   padding-bottom: 22px;
+}
+label {
+  color: #43b0b7;
 }
 
 /* Forms */
@@ -56,10 +60,11 @@ input[type="tel"]:focus {
   background-color: #EEE;
 }
 input[type="submit"] {
-  background-color: rgba(67,176,183,8.0);
+  background-color: #f1660a;
+  color: #EEE;
 }
 input[type="submit"]:disabled {
-  background-color: rgba(67,176,183,0.2);
+  background-color: #f1660a;
 }
 .hint {
   font-style: italic;
