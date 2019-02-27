@@ -74,6 +74,12 @@ input[type="submit"]:disabled {
   color: red;
 }
 
+#signup-form,
+input#contact {
+  background: #EEE;
+  color: #222;
+}
+
 /* Form Layout */
 #signup-form ol {
   display: flex;
