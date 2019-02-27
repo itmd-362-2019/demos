@@ -23,7 +23,6 @@ html {
   font-family: 'Merriweather', sans-serif;
   font-size: 1.125em; /* 18 / 16 = 1.125 */
   line-height: 1.2222222222em; /* 22 / 18 = 1.2222222222 */
-  padding: 1.2222222222em; /* 22 / 18 = 1.2222222222 */
 }
 h1 {
   font-size: 1.618em; /* 29.124 / 18 = 1.618 */
@@ -35,6 +34,11 @@ p {
 }
 label {
   color: #43b0b7;
+}
+
+/* Layout */
+#form-explainer {
+  padding: 1.2222222222em; /* 22 / 18 = 1.2222222222 */
 }
 
 /* Forms */
@@ -86,6 +90,8 @@ input#contact {
   align-items: flex-end;
   align-content: stretch;
   flex-flow: row wrap;
+
+  padding: 1.2222222222em; /* 22 / 18 = 1.2222222222 */
 }
 #signup-form li {
   flex: 1 0 auto;
@@ -124,4 +130,11 @@ body.g::after {
 
 body.g:active::after {
   display: none;
+}
+
+@media screen and (min-width: 360px) {
+  html {
+    padding: 1.2222222222em; /* 22 / 18 = 1.2222222222 */
+    padding: 6%;
+  }
 }
