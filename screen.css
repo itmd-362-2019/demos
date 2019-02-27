@@ -62,6 +62,7 @@ input[type="tel"]:focus {
 input[type="submit"] {
   background-color: #f1660a;
   color: #EEE;
+  width: 100%;
 }
 input[type="submit"]:disabled {
   background-color: #f1660a;
@@ -72,6 +73,23 @@ input[type="submit"]:disabled {
 .hint b {
   color: red;
 }
+
+/* Form Layout */
+#signup-form ol {
+  display: flex;
+  align-items: flex-end;
+  align-content: stretch;
+  flex-flow: row wrap;
+}
+#signup-form li {
+  flex: 1 0 auto;
+}
+#signup-form li#contact-input {
+  flex: 1 1 268px;
+}
+
+
+
 /* Diagnostic CSS */
 /**
 * A quick baseline grid overlay using css+svg.
