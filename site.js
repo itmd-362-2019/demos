@@ -89,12 +89,13 @@
     // Listen for keyup event ANYWHERE in the form
     signup_form.addEventListener('keyup',function(){
       var contact_value = contact_input.value;
+      var contact_error = document.querySelector('#contact-error');
       // Check the likely validity of phone OR email
       if (validate_us_phone(contact_value) || validate_email(contact_value)) {
         signup_submit.removeAttribute('disabled');
+        contact_error.innerHTML = '';
       } else {
         // Show the users an error message
-        var contact_error = document.querySelector('#contact-error');
         if(contact_value.length > 10 && contact_error.innerText.length === 0) {
           contact_error.innerText = 'You need a ten-digit phone or valid email address.';
         }
