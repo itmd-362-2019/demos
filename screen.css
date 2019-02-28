@@ -84,7 +84,7 @@ input[type="submit"]:disabled {
   font-style: italic;
 }
 .hint b {
-  color: red;
+  color: #f1660a;
 }
 
 #signup-form,
