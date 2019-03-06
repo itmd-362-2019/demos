@@ -9,21 +9,24 @@
 <body>
   <main id="content">
     <article id="form-explainer">
-      <h1>Sign Up for 2019–2020 Alerts</h1>
+      <h1>Just Coffee</h1>
       <p>
-        Enter your phone number or email below to be first to receive information about some big
-        crisis, should it happen. Your subscription will be active through the end of 2020.
+        Ordering coffee from Just Coffee is simple. Just choose your size. After all, It’s Just
+        Coffee!™
       </p>
     </article>
-    <form id="signup-form" action="#null" method="get">
+    <form id="order-form" action="#null" method="get">
       <ol>
-        <li id="contact-input">
-          <label for="contact">Email Address or Mobile Phone Number</label>
-          <p class="hint">Enter your email or phone, depending on how you wish to receive alerts.</p>
-          <input type="text" name="contact" id="contact" placeholder="555-444-3333" />
+        <li id="size-input">
+          <label for="size">Choose Your Size</label>
+          <select name="size" id="size">
+            <option value="small">Small</option>
+            <option value="medium">Medium</option>
+            <option value="large">Large</option>
+          </select>
         </li>
-        <li>
-          <input type="submit" name="signup" id="signup" value="Sign Up" />
+        <li id="submit-input">
+          <input type="submit" name="order" id="order" value="Place Your Order" />
         </li>
       </ol>
     </form>

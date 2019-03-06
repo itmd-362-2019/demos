@@ -50,12 +50,13 @@ label {
 
 /* Forms */
 input,
-label {
+label,
+select {
   display: block;
   box-sizing: border-box;
 }
 input {
-  padding: 1.2222222222em; /* 22 / 18 = 1.2222222222 */;
+  padding: 0.6111111111em; /* 11 / 18 = 0.6111111111 */;
   margin: 0;
   font-size: inherit;
   line-height: inherit;
@@ -87,14 +88,13 @@ input[type="submit"]:disabled {
   color: #f1660a;
 }
 
-#signup-form,
-input#contact {
+#order-form {
   background: #EEE;
   color: #222;
 }
 
 /* Form Layout */
-#signup-form ol {
+#order-form ol {
   display: flex;
   align-items: flex-end;
   align-content: stretch;
@@ -102,10 +102,10 @@ input#contact {
 
   padding: 1.2222222222em; /* 22 / 18 = 1.2222222222 */
 }
-#signup-form li {
+#order-form li {
   flex: 1 0 auto;
 }
-#signup-form li#contact-input {
+#order-form li#size-input {
   flex: 1 1 268px;
 }
 

@@ -77,32 +77,21 @@
 
   document.addEventListener('DOMContentLoaded',function(){
     // Select the necessary elements from the DOM
-    var signup_form = document.querySelector('#signup-form');
-    var signup_submit = document.querySelector('#signup');
-    var contact_input = document.querySelector('#contact');
-    var contact_hint = document.querySelector('#contact-input .hint');
-    contact_hint.innerHTML += ' <b id="contact-error"></b>';
-    // Disable the submit button until we are reasonable sure
-    // that we have a ten-digit phone number
-    signup_submit.setAttribute('disabled','disabled');
+    var order_form = document.querySelector('#order-form');
 
-    // Listen for keyup event ANYWHERE in the form
-    signup_form.addEventListener('keyup',function(){
-      var contact_value = contact_input.value;
-      var contact_error = document.querySelector('#contact-error');
-      // Check the likely validity of phone OR email
-      if (validate_us_phone(contact_value) || validate_email(contact_value)) {
-        signup_submit.removeAttribute('disabled');
-        contact_error.innerHTML = '';
-      } else {
-        // Show the users an error message
-        if(contact_value.length > 10 && contact_error.innerText.length === 0) {
-          contact_error.innerText = 'You need a ten-digit phone or valid email address.';
-        }
-        // This will re-disable the submit button if the input changes to an invalid state
-        signup_submit.setAttribute('disabled','disabled');
-      }
-    });
+    // Replace the submit button with `<a role="button">`
+
+    // Listen for click events on new submit button, and submit
+    // the form when it's clicked
+
+    // Replace the select element with a collection of size buttons
+
+    // Listen for clicks on the size buttons, and set the corresponding
+    // element from the hidden select element
+
+    // Listen for the form's submit event, intercept it and
+    // display an order confirmation where the form once was
+
 
   // End of DOMContentLoaded
   });
