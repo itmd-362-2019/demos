@@ -78,8 +78,11 @@
   document.addEventListener('DOMContentLoaded',function(){
     // Select the necessary elements from the DOM
     var order_form = document.querySelector('#order-form');
+    var submit_button = '<a href="#null" id="eh-submit" role="button">Place Your Order</a>';
 
     // Replace the submit button with `<a role="button">`
+    document.querySelector('#order').classList.add('hidden');
+    document.querySelector('#submit-input').innerHTML = submit_button;
 
     // Listen for click events on new submit button, and submit
     // the form when it's clicked
