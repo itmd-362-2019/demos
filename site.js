@@ -86,6 +86,12 @@
 
     // Listen for click events on new submit button, and submit
     // the form when it's clicked
+    var eh_submit = document.querySelector('#eh-submit');
+    eh_submit.addEventListener('click', function(event) {
+      // Submit the form
+      event.preventDefault();
+      order_form.submit();
+    })
 
     // Replace the select element with a collection of size buttons
 
