@@ -77,20 +77,26 @@
 
   document.addEventListener('DOMContentLoaded',function(){
     // Select the necessary elements from the DOM
-    var order_form = document.querySelector('#order-form');
-    var submit_button = '<a href="#null" id="eh-submit" role="button">Place Your Order</a>';
+    var order = {}
+    order.form = document.querySelector('#order-form');
+    order.submit_area = order.form.querySelector('#submit-area');
+    order.submit_button = order.form.querySelector('#order');
+    order.eh_submit_button = document.createElement('a');
+      order.eh_submit_button.href = '#null';
+      order.eh_submit_button.id = 'eh-submit';
+      order.eh_submit_button.setAttribute('role','button');
+      order.eh_submit_button.innerText = "Place Enhanced Order";
 
     // Replace the submit button with `<a role="button">`
-    document.querySelector('#order').classList.add('hidden');
-    document.querySelector('#submit-input').innerHTML = submit_button;
+    order.submit_button.classList.add('hidden');
+    order.submit_area.appendChild(order.eh_submit_button);
 
     // Listen for click events on new submit button, and submit
     // the form when it's clicked
-    var eh_submit = document.querySelector('#eh-submit');
-    eh_submit.addEventListener('click', function(event) {
+    order.eh_submit_button.addEventListener('click', function(event) {
       // Submit the form
       event.preventDefault();
-      order_form.submit();
+      order.submit_button.click();
     })
 
     // Replace the select element with a collection of size buttons
@@ -100,7 +106,10 @@
 
     // Listen for the form's submit event, intercept it and
     // display an order confirmation where the form once was
-
+    order.form.addEventListener('submit',function(e){
+      e.preventDefault();
+      console.log('Caught the submit event on JS refactor');
+    })
 
   // End of DOMContentLoaded
   });
