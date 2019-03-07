@@ -35,6 +35,13 @@ p {
 label {
   color: #43b0b7;
 }
+a[role="button"] {
+  display: block;
+  box-sizing: border-box;
+  text-align: center;
+  text-decoration: none;
+  font-family: sans-serif;
+}
 
 /* Layout */
 #form-explainer {
@@ -55,7 +62,8 @@ select {
   display: block;
   box-sizing: border-box;
 }
-input {
+input,
+#eh-submit {
   padding: 0.6111111111em; /* 11 / 18 = 0.6111111111 */;
   margin: 0;
   font-size: inherit;
@@ -71,7 +79,8 @@ input[type="tel"] {
 input[type="tel"]:focus {
   background-color: #EEE;
 }
-input[type="submit"] {
+input[type="submit"],
+#eh-submit {
   background-color: #f1660a;
   color: #EEE;
   opacity: 1;
@@ -109,7 +118,10 @@ input[type="submit"]:disabled {
   flex: 1 1 268px;
 }
 
-
+/* State */
+.hidden {
+  display: none;
+}
 
 /* Diagnostic CSS */
 /**
