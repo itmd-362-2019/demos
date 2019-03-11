@@ -11,12 +11,25 @@
     <article id="form-explainer">
       <h1>Just Coffee</h1>
       <p>
-        Ordering coffee from Just Coffee is simple. Just choose your size. After all, It’s Just
-        Coffee!™
+        Ordering coffee from Just Coffee is simple. Just choose your size and share your ZIP code.
+        We’ll figure out the rest. After all, It’s Just Coffee!™
       </p>
     </article>
     <form id="order-form" action="#null" method="get">
       <ol>
+        <li id="zip-area">
+          <label for="zip">ZIP Code</label>
+          <input type="text" name="zip" id="zip" />
+        </li>
+        <li id="city-area">
+          <label for="city">City</label>
+          <input type="text" name="city" id="city" />
+        </li>
+        <li id="state-area">
+          <!--TODO: Use <datalist>-->
+          <label for="state">State</label>
+          <input type="text" name="state" id="state" />
+        </li>
         <li id="size-area">
           <label for="size">Choose Your Size</label>
           <select name="size" id="size">
