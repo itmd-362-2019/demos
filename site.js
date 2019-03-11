@@ -101,6 +101,21 @@
     location.city = order.form.querySelector('#city');
     location.state = order.form.querySelector('#state');
 
+    if ('fetch' in window) {
+
+      console.log("yay, this browser suppports the Fetch API");
+
+      //fetch('http://api.zippopotam.us/us/60616')
+      fetch('http://localhost:8080/60616.js')
+        .then(function(response){
+            return response.json();
+        })
+        .then(function(parsed_json) {
+            console.log(parsed_json.country);
+        });
+
+    }
+
     // Listen for click events on new submit button, and submit
     // the form when it's clicked
     order.eh_submit_button.addEventListener('click', function(event) {
