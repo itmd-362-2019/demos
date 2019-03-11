@@ -74,6 +74,11 @@
     return validate(email,/^[^@\s]+@[^@\s]+$/g);
   }
 
+  // ZIP code validity function
+  function validate_us_zip(value) {
+    var zip = clean_nonnumbers(value);
+    return validate(zip.length,eq,5);
+  }
 
   document.addEventListener('DOMContentLoaded',function(){
     // Select the necessary elements from the DOM
