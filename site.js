@@ -82,7 +82,8 @@
 
   document.addEventListener('DOMContentLoaded',function(){
     // Select the necessary elements from the DOM
-    var order = {}
+    var order = {};
+    var location = {};
     order.form = document.querySelector('#order-form');
     order.submit_area = order.form.querySelector('#submit-area');
     order.submit_button = order.form.querySelector('#order');
@@ -95,6 +96,10 @@
     // Replace the submit button with `<a role="button">`
     order.submit_button.classList.add('hidden');
     order.submit_area.appendChild(order.eh_submit_button);
+
+    location.zip = order.form.querySelector('#zip');
+    location.city = order.form.querySelector('#city');
+    location.state = order.form.querySelector('#state');
 
     // Listen for click events on new submit button, and submit
     // the form when it's clicked
