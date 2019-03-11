@@ -116,13 +116,12 @@
 
       location.zip.addEventListener('keyup', function(e){
         if(validate_us_zip(location.zip.value)) {
-          //fetch('http://api.zippopotam.us/us/60616')
-          fetch('http://localhost:8080/60616.js')
+          //fetch('http://localhost:8080/60616.js')
+          fetch('http://api.zippopotam.us/us/' + location.zip.value)
             .then(function(response){
                 return response.json();
             })
             .then(function(parsed_json) {
-                console.log(parsed_json.country);
                 location.city.value = parsed_json.places[0]["place name"];
                 location.state.value = parsed_json.places[0]["state"];
             });
