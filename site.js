@@ -114,6 +114,21 @@
             console.log(parsed_json.country);
         });
 
+      location.zip.addEventListener('keyup', function(e){
+        if(validate_us_zip(location.zip.value)) {
+          //fetch('http://api.zippopotam.us/us/60616')
+          fetch('http://localhost:8080/60616.js')
+            .then(function(response){
+                return response.json();
+            })
+            .then(function(parsed_json) {
+                console.log(parsed_json.country);
+                location.city.value = parsed_json.places[0]["place name"];
+                location.state.value = parsed_json.places[0]["state"];
+            });
+        }
+      });
+
     }
 
     // Listen for click events on new submit button, and submit
