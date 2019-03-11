@@ -115,6 +115,7 @@ input[type="submit"]:disabled {
 }
 #order-form li {
   flex: 1 0 auto;
+  padding-bottom: 0.6111111111em; /* 11 / 18 = 0.6111111111 */
 }
 #order-form li#size-input {
   flex: 1 1 268px;
