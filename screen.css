@@ -104,10 +104,12 @@ input[type="submit"]:disabled {
 
 /* Form Layout */
 #order-form ol {
+  /*
   display: flex;
   align-items: flex-end;
   align-content: stretch;
   flex-flow: row wrap;
+  */
 
   padding: 1.2222222222em; /* 22 / 18 = 1.2222222222 */
 }
