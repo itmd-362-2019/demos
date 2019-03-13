@@ -132,9 +132,14 @@ input[type="submit"]:disabled {
   margin-right: 0;
 }
 #size-touch a {
+  background-color: #EEE;
+  color: #f1660a;
+  padding: 0.6111111111em; /* 11 / 18 = 0.6111111111 */
+  border: 1px solid #f1660a;
+}
+#size-touch a.selected {
   background-color: #f1660a;
   color: #EEE;
-  padding: 0.6111111111em; /* 11 / 18 = 0.6111111111 */
 }
 
 /* State */
