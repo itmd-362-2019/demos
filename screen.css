@@ -121,6 +121,22 @@ input[type="submit"]:disabled {
   flex: 1 1 268px;
 }
 
+/* Size-Selector Control */
+#size-touch {
+  display: flex;
+}
+#size-touch li {
+  margin-right: 0.6111111111em; /* 11 / 18 = 0.6111111111 */
+}
+#size-touch li:last-child {
+  margin-right: 0;
+}
+#size-touch a {
+  background-color: #f1660a;
+  color: #EEE;
+  padding: 0.6111111111em; /* 11 / 18 = 0.6111111111 */
+}
+
 /* State */
 .hidden {
   display: none;
