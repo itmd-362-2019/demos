@@ -92,13 +92,20 @@
       order.eh_submit_button.id = 'eh-submit';
       order.eh_submit_button.setAttribute('role','button');
       order.eh_submit_button.innerText = "Place Enhanced Order";
-    order.size_area = order.form.querySelector('#size-area')
 
-    order.eh_size_template = document.querySelector('#size-touch-template');
-    order.eh_size_selector = document.importNode(order.eh_size_template.content, true);
+    // Enhance only for browsers that understand <template>
+    if('content' in document.createElement('template')) {
+      order.size_area = order.form.querySelector('#size-area');
+      order.size_selector = order.form.querySelector('#size');
+      order.eh_size_template = document.querySelector('#size-touch-template');
+      order.eh_size_selector = document.importNode(order.eh_size_template.content, true);
 
-    // Replace the select element with a custom, templated control
-    order.size_area.appendChild(order.eh_size_selector);
+      // Add a hidden class to the old-school select
+      order.size_selector.classList.add('hidden');
+
+      // Replace the select element with a custom, templated control
+      order.size_area.appendChild(order.eh_size_selector);
+    }
 
     // Replace the submit button with `<a role="button">`
     order.submit_button.classList.add('hidden');
