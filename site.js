@@ -114,11 +114,19 @@
           zip = location.zip.value;
           fetch('http://api.zippopotam.us/us/' + location.zip.value)
             .then(function(response){
+              if (response.ok) {
                 return response.json();
+              }
+              throw Error('No data for ZIP code ' + location.zip.value)
             })
             .then(function(parsed_json) {
                 location.city.value = parsed_json.places[0]["place name"];
                 location.state.value = parsed_json.places[0]["state"];
+            })
+            .catch(function(error) {
+              console.log(error);
+              location.city.value = '';
+              location.state.value = '';
             });
         }
       });
