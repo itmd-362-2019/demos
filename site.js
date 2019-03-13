@@ -105,9 +105,13 @@
 
       console.log("yay, this browser suppports the Fetch API");
 
+      // TODO: Get rid of this hacky variable to track requests
+      var zip;
       location.zip.addEventListener('keyup', function(e){
-        if(validate_us_zip(location.zip.value)) {
+        // Validate and ensure no duplicate requests
+        if(validate_us_zip(location.zip.value) && zip !== location.zip.value) {
           //fetch('http://localhost:8080/60616.js')
+          zip = location.zip.value;
           fetch('http://api.zippopotam.us/us/' + location.zip.value)
             .then(function(response){
                 return response.json();
