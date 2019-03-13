@@ -98,6 +98,7 @@
       order.size_area = order.form.querySelector('#size-area');
       order.size_selector = order.form.querySelector('#size');
       order.eh_size_template = document.querySelector('#size-touch-template');
+      // TODO: Figure out why my event listener failed on this
       order.eh_size_selector = document.importNode(order.eh_size_template.content, true);
 
       // Add a hidden class to the old-school select
@@ -105,6 +106,23 @@
 
       // Replace the select element with a custom, templated control
       order.size_area.appendChild(order.eh_size_selector);
+
+      // TODO: Make this so I don't cry
+      order.form.querySelector('#size-touch').addEventListener('click', function(e){
+        var size = e.target.dataset.size;
+        console.log(e.target.dataset.size);
+        // TODO: Clean up how we remove existing selected attributes
+        var sizes = order.size_selector.querySelectorAll('option');
+        var buttons = order.size_area.querySelectorAll('a');
+        for (var i=0; i<sizes.length; i++) {
+          sizes[i].removeAttribute('selected');
+          buttons[i].classList.remove('selected');
+        }
+        order.size_selector.querySelector('option[value="'+size+'"]').setAttribute('selected', 'selected');
+        e.target.classList.add('selected');
+
+      });
+
     }
 
     // Replace the submit button with `<a role="button">`
