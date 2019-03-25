@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Form Elements and Events</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,shrink-to-fit=no" />
+  <link rel="stylesheet" href="screen.css" />
+</head>
+<body>
+  <main id="content">
+    <article id="form-explainer">
+      <h1>Just Coffee</h1>
+      <p>
+        Ordering coffee from Just Coffee is simple. Just choose your size and share your ZIP code.
+        We’ll figure out the rest. After all, It’s Just Coffee!™
+      </p>
+    </article>
+    <form id="order-form" action="#null" method="get">
+      <ol>
+        <li id="zip-area">
+          <label for="zip">ZIP Code</label>
+          <input type="text" name="zip" id="zip" />
+        </li>
+        <li id="city-area">
+          <label for="city">City</label>
+          <input type="text" name="city" id="city" />
+        </li>
+        <li id="state-area">
+          <!--TODO: Use <datalist>-->
+          <label for="state">State</label>
+          <input type="text" name="state" id="state" />
+        </li>
+        <li id="size-area">
+          <label for="size">Choose Your Size</label>
+          <select name="size" id="size">
+            <option value="small">Small</option>
+            <option value="medium">Medium</option>
+            <option value="large">Large</option>
+          </select>
+        </li>
+        <li id="submit-area">
+          <input type="submit" name="order" id="order" value="Place Your Order" />
+        </li>
+      </ol>
+    </form>
+  </main>
+<template id="size-touch-template">
+  <ul id="size-touch">
+    <li><a href="#null" data-size="small" role="button">Small</a></li>
+    <li><a href="#null" data-size="medium" role="button">Medium</a></li>
+    <li><a href="#null" data-size="large" role="button">Large</a></li>
+  </ul>
+</template>
+<script src="site.js"></script>
+</body>
+</html>
