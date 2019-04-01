@@ -9,13 +9,12 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
 /* Begin site styles below */
 
 #container {
-  display: flex;
-  flex-flow: row wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
 }
 #container li {
   background: blue;
   color: white;
-  flex: 1 0 200px;
   padding: 2em;
 }
 #container li:nth-child(even) {
