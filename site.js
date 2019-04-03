@@ -100,6 +100,10 @@
     order.eh_submit_button.setAttribute('role','button');
     order.eh_submit_button.innerText = "Place Enhanced Order";
 
+    // Replace the submit button with `<a role="button">`
+    order.submit_button.classList.add('hidden');
+    order.submit_area.appendChild(order.eh_submit_button);
+
     // Enhance only for browsers that understand <template>
     if('content' in document.createElement('template')) {
       order.size_area = order.form.querySelector('#size-area');
@@ -131,10 +135,6 @@
       });
 
     }
-
-    // Replace the submit button with `<a role="button">`
-    order.submit_button.classList.add('hidden');
-    order.submit_area.appendChild(order.eh_submit_button);
 
     if ('fetch' in window) {
 
