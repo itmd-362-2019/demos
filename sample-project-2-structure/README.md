@@ -10,7 +10,13 @@
     │   ├── img
     │   └── js
     │       └── site.js
-    └── index.html
+    ├── calendar
+    │   └── index.html
+    ├── confirm
+    │   └── index.html
+    ├── index.html
+    └── login
+        └── index.html
 
 ## Steps to Work Through the App
 
