@@ -142,6 +142,10 @@
 
       console.log("yay, this browser suppports the Fetch API");
 
+      location.city.classList.add('fade-out');
+      location.state.classList.add('fade-out');
+
+
       // TODO: Get rid of this hacky variable to track requests
       var zip;
       location.zip.addEventListener('keyup', function(e){
@@ -159,11 +163,16 @@
             .then(function(parsed_json) {
                 location.city.value = parsed_json.places[0]["place name"];
                 location.state.value = parsed_json.places[0]["state"];
+                location.city.classList.add('fade-in');
+                location.state.classList.add('fade-in');
+
             })
             .catch(function(error) {
               console.log(error);
               location.city.value = '';
               location.state.value = '';
+              location.city.classList.add('fade-in');
+              location.state.classList.add('fade-in');
             });
         }
       });

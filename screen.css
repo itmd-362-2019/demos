@@ -183,3 +183,11 @@ body.g:active::after {
     padding: 6%;
   }
 }
+
+.fade-out {
+  color: rgba(0,0,0,0);
+}
+.fade-in {
+  transition: color 2s;
+  color: rgba(0,0,0,1);
+}
