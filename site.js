@@ -83,11 +83,13 @@
   document.addEventListener('DOMContentLoaded',function(){
     // Select the necessary elements from the DOM
     var order = {
+      // TODO: implement get syntax to avoid repeating document.querySelector so dang much
       form: document.querySelector('#order-form'),
-      submit_area: order.form.querySelector('#submit-area'),
-      submit_button: order.form.querySelector('#order'),
+      submit_area: document.querySelector('#submit-area'),
+      submit_button: document.querySelector('#order'),
       eh_submit_button: document.createElement('a')
     };
+
     var location = {
       zip: order.form.querySelector('#zip'),
       city: order.form.querySelector('#city'),
