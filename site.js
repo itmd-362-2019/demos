@@ -82,12 +82,13 @@
 
   document.addEventListener('DOMContentLoaded',function(){
     // Select the necessary elements from the DOM
-    var order = {};
+    var order = {
+      form: document.querySelector('#order-form'),
+      submit_area: order.form.querySelector('#submit-area'),
+      submit_button: order.form.querySelector('#order'),
+      eh_submit_button: document.createElement('a')
+    };
     var location = {};
-    order.form = document.querySelector('#order-form');
-    order.submit_area = order.form.querySelector('#submit-area');
-    order.submit_button = order.form.querySelector('#order');
-    order.eh_submit_button = document.createElement('a');
       order.eh_submit_button.href = '#null';
       order.eh_submit_button.id = 'eh-submit';
       order.eh_submit_button.setAttribute('role','button');
