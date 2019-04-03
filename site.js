@@ -89,10 +89,12 @@
       eh_submit_button: document.createElement('a')
     };
     var location = {};
-      order.eh_submit_button.href = '#null';
-      order.eh_submit_button.id = 'eh-submit';
-      order.eh_submit_button.setAttribute('role','button');
-      order.eh_submit_button.innerText = "Place Enhanced Order";
+
+    // Set up details on the order.eh_submit_button element
+    order.eh_submit_button.href = '#null';
+    order.eh_submit_button.id = 'eh-submit';
+    order.eh_submit_button.setAttribute('role','button');
+    order.eh_submit_button.innerText = "Place Enhanced Order";
 
     // Enhance only for browsers that understand <template>
     if('content' in document.createElement('template')) {
