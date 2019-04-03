@@ -88,7 +88,11 @@
       submit_button: order.form.querySelector('#order'),
       eh_submit_button: document.createElement('a')
     };
-    var location = {};
+    var location = {
+      zip: order.form.querySelector('#zip'),
+      city: order.form.querySelector('#city'),
+      state: order.form.querySelector('#state')
+    };
 
     // Set up details on the order.eh_submit_button element
     order.eh_submit_button.href = '#null';
@@ -131,10 +135,6 @@
     // Replace the submit button with `<a role="button">`
     order.submit_button.classList.add('hidden');
     order.submit_area.appendChild(order.eh_submit_button);
-
-    location.zip = order.form.querySelector('#zip');
-    location.city = order.form.querySelector('#city');
-    location.state = order.form.querySelector('#state');
 
     if ('fetch' in window) {
 
