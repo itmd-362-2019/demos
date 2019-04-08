@@ -176,6 +176,11 @@
     blog.form.addEventListener('submit',function(e){
       e.preventDefault();
       console.log('Caught the submit event on JS refactor');
+      blog.form.innerHTML = '<h2>Post Saved Successfully!</h2>';
+      if(storageAvailable('localStorage')) {
+        localStorage.removeItem('title');
+        localStorage.removeItem('post');
+      }
     })
 
   // End of DOMContentLoaded
