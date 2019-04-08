@@ -102,6 +102,9 @@
       get textarea() {
         return this.form.querySelector('#body');
       },
+      get title() {
+        return this.form.querySelector('#title');
+      },
       submit_area: document.querySelector('#submit-area'),
       submit_button: document.querySelector('#share'),
       eh_submit_button: document.createElement('a')
