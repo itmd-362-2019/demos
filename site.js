@@ -128,28 +128,29 @@
     // Store Post Title leveraging the `input` event
     // https://developer.mozilla.org/en-US/docs/Web/Events/input
 
-    function stateTheValue() {
-      console.log('The title is now:', blog.title.value);
+    if(storageAvailable('localStorage')) {
+      function stateTheValue() {
+        console.log('The title is now:', blog.title.value);
+      }
+
+      function storeTheValue(key,elem) {
+        localStorage.setItem(key,elem.value);
+        console.log('Item stored as', elem.value);
+      }
+
+      blog.title.value = localStorage.getItem('title');
+      blog.textarea.value = localStorage.getItem('post');
+
+      var dbStateTheValue = debounce(stateTheValue, 1000);
+      var dbStoreTheValue = debounce(storeTheValue, 1000);
+
+      blog.title.addEventListener('input', function() {
+        dbStoreTheValue('title',blog.title);
+      });
+      blog.textarea.addEventListener('input', function() {
+        dbStoreTheValue('post',blog.textarea);
+      });
     }
-
-    function storeTheValue(key,elem) {
-      localStorage.setItem(key,elem.value);
-      console.log('Item stored as', elem.value);
-    }
-
-    blog.title.value = localStorage.getItem('title');
-    blog.textarea.value = localStorage.getItem('post');
-
-    var dbStateTheValue = debounce(stateTheValue, 1000);
-    var dbStoreTheValue = debounce(storeTheValue, 1000);
-
-    blog.title.addEventListener('input', function() {
-      dbStoreTheValue('title',blog.title);
-    });
-    blog.textarea.addEventListener('input', function() {
-      dbStoreTheValue('post',blog.textarea);
-    });
-
 
 
     // Set up details on the order.eh_submit_button element
