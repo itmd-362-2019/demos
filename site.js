@@ -99,6 +99,9 @@
     var blog = {
       // TODO: implement get syntax to avoid repeating document.querySelector so dang much
       form: document.querySelector('#blog-form'),
+      get textarea() {
+        return this.form.querySelector('#body');
+      },
       submit_area: document.querySelector('#submit-area'),
       submit_button: document.querySelector('#share'),
       eh_submit_button: document.createElement('a')
