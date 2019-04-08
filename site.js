@@ -117,9 +117,9 @@
       console.log('The title is now:', blog.title.value);
     }
 
-    function storeTheValue() {
-      localStorage.setItem('title',blog.title.value);
-      console.log('Item stored as', blog.title.value);
+    function storeTheValue(key,elem) {
+      localStorage.setItem(key,elem.value);
+      console.log('Item stored as', elem.value);
     }
 
     blog.title.value = localStorage.getItem('title');
@@ -127,7 +127,9 @@
     var dbStateTheValue = debounce(stateTheValue, 1000);
     var dbStoreTheValue = debounce(storeTheValue, 1000);
 
-    blog.title.addEventListener('input', dbStoreTheValue);
+    blog.title.addEventListener('input', function() {
+      dbStoreTheValue('title',blog.title);
+    });
 
 
 
