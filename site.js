@@ -110,6 +110,19 @@
       eh_submit_button: document.createElement('a')
     };
 
+    // Store Post Title leveraging the `input` event
+    // https://developer.mozilla.org/en-US/docs/Web/Events/input
+
+    function stateTheValue() {
+      console.log('The title is now:', blog.title.value);
+    }
+
+    var dbStateTheValue = debounce(stateTheValue, 1000);
+
+    blog.title.addEventListener('input', dbStateTheValue);
+
+
+
     // Set up details on the order.eh_submit_button element
     blog.eh_submit_button.href = '#null';
     blog.eh_submit_button.id = 'eh-submit';
