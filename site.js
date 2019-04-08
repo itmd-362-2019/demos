@@ -123,12 +123,16 @@
     }
 
     blog.title.value = localStorage.getItem('title');
+    blog.textarea.value = localStorage.getItem('post');
 
     var dbStateTheValue = debounce(stateTheValue, 1000);
     var dbStoreTheValue = debounce(storeTheValue, 1000);
 
     blog.title.addEventListener('input', function() {
       dbStoreTheValue('title',blog.title);
+    });
+    blog.textarea.addEventListener('input', function() {
+      dbStoreTheValue('post',blog.textarea);
     });
 
 
