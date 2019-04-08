@@ -80,6 +80,20 @@
     return validate(zip.length,eq,5);
   }
 
+  // Debounce function to limit calls on repeated events
+  // See for e.g., https://codeburst.io/throttling-and-debouncing-in-javascript-b01cad5c8edf
+  var debounce = function debounce(func, delay) {
+    var inDebounce;
+    return function () {
+      var context = this;
+      var args = arguments;
+      clearTimeout(inDebounce);
+      inDebounce = setTimeout(function () {
+        return func.apply(context, args);
+      }, delay);
+    };
+  };
+
   document.addEventListener('DOMContentLoaded',function(){
     // Select the necessary elements from the DOM
     var blog = {
