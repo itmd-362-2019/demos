@@ -82,119 +82,35 @@
 
   document.addEventListener('DOMContentLoaded',function(){
     // Select the necessary elements from the DOM
-    var order = {
+    var blog = {
       // TODO: implement get syntax to avoid repeating document.querySelector so dang much
-      form: document.querySelector('#order-form'),
+      form: document.querySelector('#blog-form'),
       submit_area: document.querySelector('#submit-area'),
-      submit_button: document.querySelector('#order'),
+      submit_button: document.querySelector('#share'),
       eh_submit_button: document.createElement('a')
     };
 
-    var location = {
-      zip: order.form.querySelector('#zip'),
-      city: order.form.querySelector('#city'),
-      state: order.form.querySelector('#state')
-    };
-
     // Set up details on the order.eh_submit_button element
-    order.eh_submit_button.href = '#null';
-    order.eh_submit_button.id = 'eh-submit';
-    order.eh_submit_button.setAttribute('role','button');
-    order.eh_submit_button.innerText = "Place Enhanced Order";
+    blog.eh_submit_button.href = '#null';
+    blog.eh_submit_button.id = 'eh-submit';
+    blog.eh_submit_button.setAttribute('role','button');
+    blog.eh_submit_button.innerText = blog.submit_button.getAttribute('value');
 
     // Replace the submit button with `<a role="button">`
-    order.submit_button.classList.add('hidden');
-    order.submit_area.appendChild(order.eh_submit_button);
-
-    // Enhance only for browsers that understand <template>
-    if('content' in document.createElement('template')) {
-      order.size_area = order.form.querySelector('#size-area');
-      order.size_selector = order.form.querySelector('#size');
-      order.eh_size_template = document.querySelector('#size-touch-template');
-      // TODO: Figure out why my event listener failed on this
-      order.eh_size_selector = document.importNode(order.eh_size_template.content, true);
-
-      // Add a hidden class to the old-school select
-      order.size_selector.classList.add('hidden');
-
-      // Replace the select element with a custom, templated control
-      order.size_area.appendChild(order.eh_size_selector);
-
-      // TODO: Make this so I don't cry
-      order.form.querySelector('#size-touch').addEventListener('click', function(e){
-        var size = e.target.dataset.size;
-        console.log(e.target.dataset.size);
-        // TODO: Clean up how we remove existing selected attributes
-        var sizes = order.size_selector.querySelectorAll('option');
-        var buttons = order.size_area.querySelectorAll('a');
-        for (var i=0; i<sizes.length; i++) {
-          sizes[i].removeAttribute('selected');
-          buttons[i].classList.remove('selected');
-        }
-        order.size_selector.querySelector('option[value="'+size+'"]').setAttribute('selected', 'selected');
-        e.target.classList.add('selected');
-
-      });
-
-    }
-
-    if ('fetch' in window) {
-
-      console.log("yay, this browser suppports the Fetch API");
-
-      location.city.classList.add('fade-out');
-      location.state.classList.add('fade-out');
-
-
-      // TODO: Get rid of this hacky variable to track requests
-      var zip;
-      location.zip.addEventListener('keyup', function(e){
-        // Validate and ensure no duplicate requests
-        if(validate_us_zip(location.zip.value) && zip !== location.zip.value) {
-          //fetch('http://localhost:8080/60616.js')
-          zip = location.zip.value;
-          fetch('http://api.zippopotam.us/us/' + location.zip.value)
-            .then(function(response){
-              if (response.ok) {
-                return response.json();
-              }
-              throw Error('No data for ZIP code ' + location.zip.value)
-            })
-            .then(function(parsed_json) {
-                location.city.value = parsed_json.places[0]["place name"];
-                location.state.value = parsed_json.places[0]["state"];
-                location.city.classList.add('fade-in');
-                location.state.classList.add('fade-in');
-
-            })
-            .catch(function(error) {
-              console.log(error);
-              location.city.value = '';
-              location.state.value = '';
-              location.city.classList.add('fade-in');
-              location.state.classList.add('fade-in');
-            });
-        }
-      });
-
-    }
+    blog.submit_button.classList.add('hidden');
+    blog.submit_area.appendChild(blog.eh_submit_button);
 
     // Listen for click events on new submit button, and submit
     // the form when it's clicked
-    order.eh_submit_button.addEventListener('click', function(event) {
+    blog.eh_submit_button.addEventListener('click', function(event) {
       // Submit the form
       event.preventDefault();
-      order.submit_button.click();
+      blog.submit_button.click();
     })
 
-    // Replace the select element with a collection of size buttons
-
-    // Listen for clicks on the size buttons, and set the corresponding
-    // element from the hidden select element
-
     // Listen for the form's submit event, intercept it and
-    // display an order confirmation where the form once was
-    order.form.addEventListener('submit',function(e){
+    // display a confirmation where the form once was
+    blog.form.addEventListener('submit',function(e){
       e.preventDefault();
       console.log('Caught the submit event on JS refactor');
     })

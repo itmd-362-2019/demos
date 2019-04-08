@@ -58,31 +58,31 @@ a[role="button"] {
 /* Forms */
 input,
 label,
-select {
+select,
+textarea {
   display: block;
   box-sizing: border-box;
 }
 input,
+textarea,
 #eh-submit {
   padding: 0.6111111111em; /* 11 / 18 = 0.6111111111 */;
   margin: 0;
+  margin-bottom: 1.2222222222em; /* 22 / 18 = 1.2222222222 */
   font-size: inherit;
   line-height: inherit;
   border: 0;
   outline: 0;
   width: 100%;
 }
-input[type="tel"] {
-  margin-bottom: 11px;
-  background-color: rgba(67,176,183,1.0);
-}
-input[type="tel"]:focus {
-  background-color: #EEE;
+textarea {
+  height: 12.2222222222em; /* 10 lines ->  220 / 18 = 12.2222222222 */
 }
 input[type="submit"],
 #eh-submit {
   background-color: #f1660a;
   color: #EEE;
+  margin-bottom: 0;
   opacity: 1;
   width: 100%;
   transition: opacity 2s;
@@ -97,49 +97,14 @@ input[type="submit"]:disabled {
   color: #f1660a;
 }
 
-#order-form {
+#blog-form {
   background: #EEE;
   color: #222;
 }
 
 /* Form Layout */
-#order-form ol {
-  /*
-  display: flex;
-  align-items: flex-end;
-  align-content: stretch;
-  flex-flow: row wrap;
-  */
-
+#blog-form ol {
   padding: 1.2222222222em; /* 22 / 18 = 1.2222222222 */
-}
-#order-form li {
-  flex: 1 0 auto;
-  padding-bottom: 0.6111111111em; /* 11 / 18 = 0.6111111111 */
-}
-#order-form li#size-input {
-  flex: 1 1 268px;
-}
-
-/* Size-Selector Control */
-#size-touch {
-  display: flex;
-}
-#size-touch li {
-  margin-right: 0.6111111111em; /* 11 / 18 = 0.6111111111 */
-}
-#size-touch li:last-child {
-  margin-right: 0;
-}
-#size-touch a {
-  background-color: #EEE;
-  color: #f1660a;
-  padding: 0.6111111111em; /* 11 / 18 = 0.6111111111 */
-  border: 1px solid #f1660a;
-}
-#size-touch a.selected {
-  background-color: #f1660a;
-  color: #EEE;
 }
 
 /* State */
