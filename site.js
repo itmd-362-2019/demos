@@ -178,27 +178,25 @@
     // https://developer.mozilla.org/en-US/docs/Web/Events/input
 
     if(storageAvailable('localStorage')) {
-      function stateTheValue() {
-        console.log('The title is now:', blog.title.value);
-      }
 
-      function storeTheValue(key,elem) {
-        localStorage.setItem(key,elem.value);
-        console.log('Item stored as', elem.value);
-      }
+      // blog.title.value = localStorage.getItem('title');
+      // blog.textarea.value = localStorage.getItem('post');
 
-      blog.title.value = localStorage.getItem('title');
-      blog.textarea.value = localStorage.getItem('post');
+      // var dbStateTheValue = debounce(stateTheValue, 1000);
+      // var dbStoreTheValue = debounce(storeTheValue, 1000);
 
-      var dbStateTheValue = debounce(stateTheValue, 1000);
-      var dbStoreTheValue = debounce(storeTheValue, 1000);
+      // blog.title.addEventListener('input', function() {
+      //  dbStoreTheValue('title',blog.title);
+      // });
+      // blog.textarea.addEventListener('input', function() {
+      //  dbStoreTheValue('post',blog.textarea);
+      //});
 
-      blog.title.addEventListener('input', function() {
-        dbStoreTheValue('title',blog.title);
+      blog.form.addEventListener('input',function(){
+        //console.log(blog.form.id);
+        storePrefixedInputStorageItem(blog.form.id,event.target)
       });
-      blog.textarea.addEventListener('input', function() {
-        dbStoreTheValue('post',blog.textarea);
-      });
+
     }
 
 
