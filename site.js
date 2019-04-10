@@ -143,6 +143,21 @@
     return JSON.parse(localStorage.getItem(key));
   }
 
+  // Retrieve all prefixed storage item keys
+  function retrievePrefixedStorageItemKeys(prefix) {
+    var saved_keys = [];
+    for(var i = 0; i < localStorage.length; i++) {
+      // Get only the items that begin with `prefix`
+      var key = localStorage.key(i);
+      if (key.startsWith(prefix)) {
+        saved_keys.push(key);
+      }
+    }
+    return saved_keys;
+  }
+
+
+
   document.addEventListener('DOMContentLoaded',function(){
     // Select the necessary elements from the DOM
     var blog = {
