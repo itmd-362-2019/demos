@@ -122,6 +122,16 @@
     return saved_input_elements;
   }
 
+  // Get all interesting information about an input element
+  function getInputData(input_element) {
+    return {
+      id: input_element.id,
+      name: input_element.name,
+      type: input_element.tagName.toLowerCase(),
+      value: input_element.value
+    }
+  }
+
   document.addEventListener('DOMContentLoaded',function(){
     // Select the necessary elements from the DOM
     var blog = {
