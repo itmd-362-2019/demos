@@ -132,6 +132,17 @@
     }
   }
 
+  // Store a prefixed storage item with input item data
+  function storePrefixedInputStorageItem(prefix,input_element) {
+    var item_data = getInputData(input_element);
+    localStorage.setItem(prefix + item_data.id, JSON.stringify(item_data));
+  }
+
+  // Retrieve and parse an input storage item
+  function retrieveAndParseInputStorageItem(key) {
+    return JSON.parse(localStorage.getItem(key));
+  }
+
   document.addEventListener('DOMContentLoaded',function(){
     // Select the necessary elements from the DOM
     var blog = {
