@@ -179,6 +179,15 @@
 
     if(storageAvailable('localStorage')) {
 
+      var form_inputs = collectFormInputElements('#blog-form');
+      console.log(typeof form_inputs);
+      // Loop through the inputs, and set their values from storage
+      for (var i = 0; i < form_inputs.length; i++) {
+        console.log('Looped input ID:', form_inputs[i].id);
+        var stored_data = retrieveAndParseInputStorageItem('blog-form'+form_inputs[i].id);
+        form_inputs[i].value = stored_data.value;
+      }
+
       // blog.title.value = localStorage.getItem('title');
       // blog.textarea.value = localStorage.getItem('post');
 
