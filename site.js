@@ -109,6 +109,19 @@
     };
   };
 
+  // Functions for working with form data
+  // Return all data-rich input elements
+  function collectFormInputElements(form_selector) {
+    var saved_input_elements = [];
+    var input_elements = document.querySelector(form_selector).elements;
+    for (var input of input_elements) {
+      if(input.type !== 'submit') {
+        saved_input_elements.push(input);
+      }
+    }
+    return saved_input_elements;
+  }
+
   document.addEventListener('DOMContentLoaded',function(){
     // Select the necessary elements from the DOM
     var blog = {
