@@ -194,23 +194,10 @@
       eh_submit_button: document.createElement('a')
     };
 
-
-
-    if(storageAvailable('localStorage')) {
-
-      // Restore any existing inputs stored in localStorage
-      restorePrefixedFormInputsFromLocalStorage('blog-form');
-
-      // Store Post Title leveraging the `input` event
-      // https://developer.mozilla.org/en-US/docs/Web/Events/input
-      blog.form.addEventListener('input',function(){
-        //console.log(blog.form.id);
-        storePrefixedInputStorageItem(blog.form.id,event.target)
-      });
-
-    }
-
-
+    // TODO: Refactor this nonsense as a reusable function, something like
+    // createEnhancedSubmitButton() that returns the submit button element
+    // for use with appendChild()
+    
     // Set up details on the order.eh_submit_button element
     blog.eh_submit_button.href = '#null';
     blog.eh_submit_button.id = 'eh-submit';
@@ -227,7 +214,22 @@
       // Submit the form
       event.preventDefault();
       blog.submit_button.click();
-    })
+    });
+
+
+    if(storageAvailable('localStorage')) {
+
+      // Restore any existing inputs stored in localStorage
+      restorePrefixedFormInputsFromLocalStorage('blog-form');
+
+      // Store Post Title leveraging the `input` event
+      // https://developer.mozilla.org/en-US/docs/Web/Events/input
+      blog.form.addEventListener('input',function(){
+        //console.log(blog.form.id);
+        storePrefixedInputStorageItem(blog.form.id,event.target)
+      });
+
+    }
 
     // Listen for the form's submit event, intercept it and
     // display a confirmation where the form once was
