@@ -156,7 +156,20 @@
     return saved_keys;
   }
 
-
+  function restorePrefixedFormInputsFromLocalStorage(prefix) {
+    // Get an array of all the prefixed stored keys
+    var saved_keys = retrievePrefixedStorageItemKeys(prefix);
+    // Loop through the array and use the stored object data to
+    // restore the value of the corresponding form item
+    for (var key of saved_keys) {
+      var item = retrieveAndParseInputStorageItem(key);
+      // Use old-school getElementById; no need to prefix with #
+      var input_by_id = document.getElementById(item.id)
+      if (input_by_id) {
+        input_by_id.value = item.value;
+      }
+    }
+  }
 
   document.addEventListener('DOMContentLoaded',function(){
     // Select the necessary elements from the DOM
@@ -179,14 +192,7 @@
 
     if(storageAvailable('localStorage')) {
 
-      var form_inputs = collectFormInputElements('#blog-form');
-      console.log(typeof form_inputs);
-      // Loop through the inputs, and set their values from storage
-      for (var i = 0; i < form_inputs.length; i++) {
-        console.log('Looped input ID:', form_inputs[i].id);
-        var stored_data = retrieveAndParseInputStorageItem('blog-form'+form_inputs[i].id);
-        form_inputs[i].value = stored_data.value;
-      }
+      restorePrefixedFormInputsFromLocalStorage('blog-form');
 
       // blog.title.value = localStorage.getItem('title');
       // blog.textarea.value = localStorage.getItem('post');
