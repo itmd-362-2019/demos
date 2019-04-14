@@ -187,26 +187,15 @@
       eh_submit_button: document.createElement('a')
     };
 
-    // Store Post Title leveraging the `input` event
-    // https://developer.mozilla.org/en-US/docs/Web/Events/input
+
 
     if(storageAvailable('localStorage')) {
 
+      // Restore any existing inputs stored in localStorage
       restorePrefixedFormInputsFromLocalStorage('blog-form');
 
-      // blog.title.value = localStorage.getItem('title');
-      // blog.textarea.value = localStorage.getItem('post');
-
-      // var dbStateTheValue = debounce(stateTheValue, 1000);
-      // var dbStoreTheValue = debounce(storeTheValue, 1000);
-
-      // blog.title.addEventListener('input', function() {
-      //  dbStoreTheValue('title',blog.title);
-      // });
-      // blog.textarea.addEventListener('input', function() {
-      //  dbStoreTheValue('post',blog.textarea);
-      //});
-
+      // Store Post Title leveraging the `input` event
+      // https://developer.mozilla.org/en-US/docs/Web/Events/input
       blog.form.addEventListener('input',function(){
         //console.log(blog.form.id);
         storePrefixedInputStorageItem(blog.form.id,event.target)
