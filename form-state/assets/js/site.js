@@ -92,4 +92,19 @@
     }
   }
 
+  document.querySelector('#custom-order').addEventListener('submit', function(e){
+    e.preventDefault();
+
+    var movies = document.querySelectorAll('input[name^="movies"]');
+    var movie_values = [];
+    for (var movie of movies) {
+      movie_values.push(movie.value)
+    }
+    localStorage.setItem('chosen_movies',JSON.stringify({ movies: movie_values }));
+
+    document.location.assign('place-order/');
+
+  });
+
+
 })();
